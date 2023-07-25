@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: auto;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Rock Salt", cursive;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+li a {
+  color: yellow;
+  text-decoration: solid;
+  text-transform: capitalize;
+}
+section nav ol {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+  list-style-type: none;
+}
+header nav li {
+  padding: 30px;
+  font-family: "Caprasimo", cursive;
+  font-size: 2rem;
+  margin-inline: 2rem;
+}
+footer nav li {
+  float: left;
+  padding: 30px;
+  font-family: "Caprasimo", cursive;
+  font-size: 2rem;
+}
+footer nav li:hover,
+header nav li:hover {
+  transform: scale(1.2);
+  background-color: #950101;
+}
+aside nav li a:hover {
+  filter: drop-shadow(12px 12px 7px red);
+}
+#albums li:hover {
+  scale: 1.3;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: yellow;
+}
+.copy {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: small;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.copy img {
+  margin-inline: 10px;
+  transition: filter 0.5s ease-in-out;
+  filter: drop-shadow(1px 1px 2px black);
+}
+.copy img:hover {
+  filter: drop-shadow(1px 1px 2px yellow);
+}
+#aboutus {
+  font-size: 25px;
+  color: royalblue;
+  max-width: 59rem;
+}
+.aside {
+  display: flex;
+  align-content: space-evenly;
+  flex-direction: row;
+  font-size: 3em;
+  height: 100%;
+}
+.aside img {
+  width: 500px;
+  height: 350px;
+  clip-path: circle();
+}
+#albums {
+  font-size: 25px;
+  color: #ff0000;
+  margin: 50px;
+  padding: 25px;
+}
+#albums li {
+  margin: 20px;
+  width: auto;
+}
+audio {
+  border: 10px solid #3d0000;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  z-index: 2;
+}
+a:focus {
+  color: aqua;
+  font-variant: small-caps;
+}
+a:active {
+  color: red;
+  text-transform: uppercase;
+}
+#sec2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+main {
+  background-color: #000000;
+  height: auto;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  max-width: 100%;
+  isolation: isolate;
+  position: relative;
+}
+main::after {
+  content: "";
+  position: absolute;
+  background: url("wp1854529-rhcp-wallpapers.jpg") center center;
+  background-repeat: no-repeat;
+  background-position: center;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.1;
+  animation: rotation 50s infinite linear;
+}
+figcaption {
+  text-align: center;
+  font-variant: small-caps;
+}
+h1 {
+  font-variant: small-caps;
+  /* text-decoration: overline underline solid royalblue; */
+  text-shadow: 30px -20px 5px black;
+  animation: shadowing 2s infinite linear;
+  transform: skew(-30deg);
+}
+article {
+  line-height: 1.4;
+}
+#albums li:nth-child(even) {
+  background-color: #3d0000;
+}
+#albums li:nth-child(odd) {
+  background-color: #950101;
+}
+@keyframes rotation {
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes shadowing {
+  25% {
+    text-shadow: 30px -20px 5px black;
+  }
+  50% {
+    text-shadow: -30px -20px 5px black;
+  }
+  75% {
+    text-shadow: 0px -20px 5px black;
+  }
+  100% {
+    text-shadow: 30px -20px 5px black;
+  }
+}
+header {
+  background: url(pattern.png) center center/cover fixed,
+    linear-gradient(to bottom right, red, black);
+}
+footer {
+  background: url(pattern.png) center center/cover fixed;
+  background: url(pattern.png) center center/cover fixed,
+    linear-gradient(to bottom right, red, black);
+}
+span {
+  color: red;
+  text-transform: uppercase;
+}
+#merch {
+  grid-column: 1 / span 2;
+}
+#merch ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  justify-content: center;
+}
+#merch li img {
+  clip-path: circle(100px);
+  transition: clip-path 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+#merch li img:hover {
+  clip-path: circle(150px);
+}
+
+li div {
+  color: red;
+}
+@media (max-width: 1023px) {
+  main {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .aside {
+    flex-flow: column wrap;
+  }
+  .banner h1 {
+    text-align: center;
+    font-size: 32px;
+  }
+  #aboutus {
+    font-size: 16px;
+  }
+}
+@media (max-width: 479px) {
+  main {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .aside {
+    flex-flow: column wrap;
+  }
+  .banner h1 {
+    text-align: center;
+    font-size: 32px;
+  }
+  #aboutus {
+    font-size: 12px;
+    width: 60vw;
+    margin-inline: 2em;
+    line-height: 2;
+    width: 70%;
+  }
+  #albums {
+    font-size: 16px;
+  }
+}
